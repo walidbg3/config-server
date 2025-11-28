@@ -5,7 +5,8 @@ logging:
 spring:
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:~/user-db-${spring.profiles.active}-${server.port}
+    # Note: Corrected syntax from PDF OCR errors
+    url: jdbc:h2:file:~/users-${spring.profiles.active}-${server.port}
     username: sa
     password: password
   jpa:
@@ -17,20 +18,3 @@ spring:
     console:
       enabled: true
       path: /h2-console
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}-${spring.profiles.active}-${server.port}
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*" 
-  endpoint:
-    health:
-      show-details: always
