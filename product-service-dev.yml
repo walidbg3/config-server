@@ -1,5 +1,5 @@
 server:
-  port: 8090 # Default port
+  port: 8086 # Default port
 spring:
   datasource:
     url: jdbc:h2:mem:productdb
