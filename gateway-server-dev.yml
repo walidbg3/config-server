@@ -10,9 +10,6 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/users/**
-          filters:
-           # Optional: If your User Controller is at root (/), use this strip prefix
-           # - StripPrefix=1 
         - id: product-service
           uri: lb://product-service
           predicates:
